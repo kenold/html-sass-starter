@@ -5,4 +5,9 @@ You need to install Node JS to run `npm` commands. So, verify that Node.js is in
 2. Install live-server package globally (-g): `npm install -g live-server`
 3. Run `npm start` to start live server
 
-When you save `main.scss` (/sass/main.scss), a file named `style.css` will be created in /css.
+When you save `main.scss` (/sass/main.scss), a file named `style.css` will be created in `assets/css`.
+
+## Font
+The starter is using the ***Inter*** font. More info at [https://rsms.me/inter/](https://rsms.me/inter/). The font is located in the fonts partial at sass/_fonts.scss. Optional local font files area also included (assets/fonts) if you'd like to work offline.
+
+Created by [Kenold Beauplan](https://twitter.com/kenoldb)
