@@ -15,28 +15,71 @@ html {
     font-size: 16px;
 }
 
+img {
+    width: 100%;
+}
+
+// remove these lines as you wish:
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+li {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
 
 // **** BREAKPOINTS **** //
 // mobile portrait: less than 640px
 // add mobile-first styles here
+li:first-child {
+    display: block;;
+}
 
 
 // mobile landscape: > 640px
 @media (min-width: 640px) {
-
+    li.mobile {
+        display: none;
+    }
+    li.mobile-landscape {
+        display: block;
+    }
 }
 
-// tablet landscape: > 768px
+// tablet portrait: > 768px
 @media (min-width: 768px) {
-
+    li.mobile-landscape {
+        display: none;
+    }
+    li.tablet-portrait {
+        display: block;
+    }
 }
 
 // tablet landscape: > 1024px
 @media (min-width: 1024px) {
-
+    li.mobile {
+        display: none;
+    }
+    li.tablet-portrait {
+        display: none;
+    }
+    li.tablet-landscape {
+        display: block;;
+    }
 }
 
 // laptop/desktop: > 1280px
 @media (min-width: 1280px) {
-
+    li:nth-child(-n+4) {
+        display: none;
+    }
+    li.laptop-desktop {
+        display: block;;
+    }
 }

@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Page Title</title>
-    <!-- include css reset if you want:
-        - to use the CDN link, use the URL below:
+    <!-- if you want to use the CDN for CSS reset, use the URL below:
         https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
     -->
-    <!-- <link rel="stylesheet" href="assets/css/reset.min.css"> -->
+    <link rel="stylesheet" href="assets/css/reset.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <img src="assets/images/placeholder.png" width="500px" alt="Image" />
-    <h1>Content here</h1>
+    <div class="wrapper">
+        <img src="assets/images/placeholder.png" width="500px" alt="Image" />
+        <ul>
+            <li class="mobile">Mobile First Content</li>
+            <li class="mobile-landscape">640px: Mobile Landscape Content</li>
+            <li class="tablet-portrait">768x: Tablet Portrait Content</li>
+            <li class="tablet-landscape">1024px: Tablet Landscape Content</li>
+            <li class="laptop-desktop">1080px: Laptop/Desktop Content</li>
+        </ul>
+    </div>
 </body>
 </html>
