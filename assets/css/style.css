@@ -51,6 +51,8 @@ li {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 1rem; }
+  li span {
+    color: var(--color-accent); }
 
 li:first-child {
   display: block; }
