@@ -48,6 +48,8 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem; }
+  .wrapper img {
+    box-shadow: var(--shadow-md); }
 
 li {
   display: none;
