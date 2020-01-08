@@ -49,7 +49,7 @@ a.skip-link {
 }
 
 .container {
-    padding: 16px;
+    padding: 0 16px;
     @include md {
         max-width: 1200px;
         margin: 0 auto;
@@ -57,10 +57,14 @@ a.skip-link {
 }
 
 .main-header {
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 1.75rem 0;
     .container {
         display: flex;
         justify-content: space-between;
+    }h1 {
+        color: var(--color-base);
+        @include font-size(40);
+        font-weight: 700;
     }
 }
 
