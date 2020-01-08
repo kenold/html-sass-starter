@@ -1,6 +1,6 @@
 :root {
-    --color-accent: hsla(232, 47%, 56%, 1);
-    --color-link: hsla(212, 97%, 43%, 1);
+    --color-accent: hsla(232, 47%, 56%);
+    --color-link: hsla(212, 97%, 43%);
     --color-base: #000;
     --color-light: #888;
     --color--dark: #111;
@@ -55,7 +55,9 @@ a.skip-link {
         margin: 0 auto;
     }
 }
+.highlight {
 
+}
 .main-header {
     margin: 1rem 0 1.75rem 0;
     .container {
@@ -95,10 +97,16 @@ a.skip-link {
 .demo__heading {
     margin: 1.5rem 0;
 }
-.demo li {
-    display: none;
-    font-size: 2rem;
-    font-weight: bold;
+
+.demo {
+    li {
+        display: none;
+        font-size: 2rem;
+        font-weight: bold;
+        &:first-child {
+            display: block;
+        }
+    }
     span {
         color: var(--color-accent);
     }
@@ -108,9 +116,7 @@ a.skip-link {
 // **** BREAKPOINTS **** //
 // mobile portrait: less than 640px
 // add mobile-first styles here
-.demo li:first-child {
-    display: block;;
-}
+
 
 
 // mobile landscape: > 640px

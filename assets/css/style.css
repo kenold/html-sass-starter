@@ -1,6 +1,6 @@
 :root {
-  --color-accent: hsla(232, 47%, 56%, 1);
-  --color-link: hsla(212, 97%, 43%, 1);
+  --color-accent: hsla(232, 47%, 56%);
+  --color-link: hsla(212, 97%, 43%);
   --color-base: #000;
   --color-light: #888;
   --color--dark: #111;
@@ -106,11 +106,11 @@ a.skip-link {
   display: none;
   font-size: 2rem;
   font-weight: bold; }
-  .demo li span {
-    color: var(--color-accent); }
+  .demo li:first-child {
+    display: block; }
 
-.demo li:first-child {
-  display: block; }
+.demo span {
+  color: var(--color-accent); }
 
 @media (min-width: 640px) {
   .demo li.mobile {
