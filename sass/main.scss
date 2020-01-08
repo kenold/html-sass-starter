@@ -79,7 +79,7 @@ a.skip-link {
         transition: all 300ms;
         &:hover {
             background-color: var(--color-accent-light);
-            border-radius: calc(var(--radius) + 3px);
+            border-radius: var(--radius);
         }
     }
 }
