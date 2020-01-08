@@ -4,7 +4,7 @@
     --color-base: #000;
     --color-light: #888;
     --color--dark: #111;
-    --font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-sans: Inter;
     --radius: 5px;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, .085), 0 8px 24px rgba(0, 0, 0, .1);
     --shadow-md: 0 1px 8px rgba(0, 0, 0, .085), 0 1px 8px rgba(0, 0, 0, .1);
@@ -15,28 +15,86 @@
 @import 'mixins.scss';
 
 html {
-    font-family: var(--font-sans);
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
+}
+
+body {
+    font-weight: 400;
 }
 
 img {
     width: 100%;
 }
 
-// remove these lines as you wish:
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    img {
-        box-shadow: var(--shadow-md);
+p {
+    @include font-size(16);
+    line-height: 1.5;
+    margin: 14px 0 16px;
+}
+
+// hide skip to content link
+a.skip-link {
+    position: fixed;
+    top: -30em;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: .5em 1em;
+    font-size: 1em;
+    text-align: center;
+    transition: top .1s linear;
+}
+
+.container {
+    padding: 16px;
+    @include md {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
-li {
+
+.main-header {
+    margin: 1rem 0 2rem 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// main nav
+.main-nav__list {
+    display: flex;
+    justify-content: space-around;
+}
+.main-nav__item {
+    a {
+        padding: 15px 20px 15px 20px;
+        &:hover {
+            background-color: #eee;
+        }
+    }
+}
+
+// main footer
+.main-footer {
+    margin: 2rem 0;
+}
+
+// CSS below is for the demo content - remove these lines as you wish:
+
+.demo__img {
+    box-shadow: var(--shadow-md);
+}
+.demo__heading {
+    margin: 1.5rem 0;
+}
+.demo li {
     display: none;
     font-size: 2rem;
     font-weight: bold;
-    margin-top: 1rem;
     span {
         color: var(--color-accent);
     }
@@ -46,50 +104,58 @@ li {
 // **** BREAKPOINTS **** //
 // mobile portrait: less than 640px
 // add mobile-first styles here
-li:first-child {
+.demo li:first-child {
     display: block;;
 }
 
 
 // mobile landscape: > 640px
 @media (min-width: 640px) {
-    li.mobile {
-        display: none;
-    }
-    li.mobile-landscape {
-        display: block;
+    .demo {
+        li.mobile {
+            display: none;
+        }
+        li.mobile-landscape {
+            display: block;
+        }
     }
 }
 
 // tablet portrait: > 768px
 @media (min-width: 768px) {
-    li.mobile-landscape {
-        display: none;
-    }
-    li.tablet-portrait {
-        display: block;
+    .demo {
+        li.mobile-landscape {
+            display: none;
+        }
+        li.tablet-portrait {
+            display: block;
+        }
     }
 }
 
 // tablet landscape: > 1024px
 @media (min-width: 1024px) {
-    li.mobile {
-        display: none;
-    }
-    li.tablet-portrait {
-        display: none;
-    }
-    li.tablet-landscape {
-        display: block;;
+    .demo {
+        li.mobile {
+            display: none;
+        }
+        li.tablet-portrait {
+            display: none;
+        }
+        li.tablet-landscape {
+            display: block;;
+        }
     }
 }
 
 // laptop/desktop: > 1280px
 @media (min-width: 1280px) {
-    li:nth-child(-n+4) {
-        display: none;
-    }
-    li.laptop-desktop {
-        display: block;;
+    .demo  {
+        li:nth-child(-n+4) {
+            display: none;
+        }
+        li.laptop-desktop {
+            display: block;;
+        }
     }
 }
