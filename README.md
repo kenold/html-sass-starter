@@ -31,7 +31,7 @@ h1 {
     @include font-size(18);
 }
 ```
-will exand to:
+will expand to:
 ```
 h1 {
     font-size: 1.125rem;
