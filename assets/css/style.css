@@ -47,6 +47,10 @@ html {
 body {
   font-weight: 400; }
 
+a {
+  color: var(--color-base);
+  text-decoration: none; }
+
 img {
   width: 100%; }
 
@@ -101,13 +105,17 @@ a.skip-link {
   padding: 15px 20px 15px 20px;
   transition: all 300ms; }
   .main-nav__item a:hover {
-    background-color: #eee; }
+    background-color: var(--color-accent-light);
+    border-radius: calc(var(--radius) + 3px); }
 
 .main-footer {
   margin: 2rem 0; }
 
 /********
- CSS below is for the demo content - remove these lines as you wish:
+ The CSS import below is for demonstration only. You should remove it before you push your site to production
+********/
+/********
+ This CSS file is for demonstration only. You should delete it before you push your site to production
 ********/
 .demo__img {
   box-shadow: var(--shadow-md); }

@@ -1,21 +1,8 @@
-:root {
-    --color-accent: hsl(232, 47%, 56%);
-    --color-accent-light: hsla(232, 47%, 70%, .2);
-    --color-base: #000;
-    --color--dark: #111;
-    --color-link: hsla(212, 97%, 43%);
-    --color-light: #888;
-    --color-white: #fff;
-    --font-sans: Inter;
-    --radius: 5px;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .085), 0 8px 24px rgba(0, 0, 0, .1);
-    --shadow-md: 0 1px 8px rgba(0, 0, 0, .085), 0 1px 8px rgba(0, 0, 0, .1);
-    --site-width: 800px;
-}
+@import 'variables.scss';
+@import 'mixins.scss';
 
 // import fonts partial from sass/_fonts.scss
 @import 'fonts.scss';
-@import 'mixins.scss';
 
 html {
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -25,7 +12,10 @@ html {
 body {
     font-weight: 400;
 }
-
+a {
+    color: var(--color-base);
+    text-decoration: none;
+}
 img {
     width: 100%;
 }
@@ -88,7 +78,8 @@ a.skip-link {
         padding: 15px 20px 15px 20px;
         transition: all 300ms;
         &:hover {
-            background-color: #eee;
+            background-color: var(--color-accent-light);
+            border-radius: calc(var(--radius) + 3px);
         }
     }
 }
@@ -99,91 +90,6 @@ a.skip-link {
 }
 
 /********
- CSS below is for the demo content - remove these lines as you wish:
+ The CSS import below is for demonstration only. You should remove it before you push your site to production
 ********/
-
-.demo__img {
-    box-shadow: var(--shadow-md);
-}
-.demo__heading {
-    margin: 1.5rem 0;
-}
-
-.demo {
-    li {
-        display: none;
-        font-size: 2rem;
-        font-weight: bold;
-        &:first-child {
-            display: block;
-        }
-    }
-    span {
-        color: var(--color-accent);
-        &.highlight {
-            background: linear-gradient(var(--color-accent-light), var(--color-accent-light));
-            background-size: 100% 100%;
-            color: var(--color-base);
-            font-weight: 500;
-            padding: 0 .5rem;
-        }
-    }
-}
-
-
-// **** BREAKPOINTS **** //
-// mobile portrait: less than 640px
-// add mobile-first styles here
-
-
-
-// mobile landscape: > 640px
-@media (min-width: 640px) {
-    .demo {
-        li.mobile {
-            display: none;
-        }
-        li.mobile-landscape {
-            display: block;
-        }
-    }
-}
-
-// tablet portrait: > 768px
-@media (min-width: 768px) {
-    .demo {
-        li.mobile-landscape {
-            display: none;
-        }
-        li.tablet-portrait {
-            display: block;
-        }
-    }
-}
-
-// tablet landscape: > 1024px
-@media (min-width: 1024px) {
-    .demo {
-        li.mobile {
-            display: none;
-        }
-        li.tablet-portrait {
-            display: none;
-        }
-        li.tablet-landscape {
-            display: block;;
-        }
-    }
-}
-
-// laptop/desktop: > 1280px
-@media (min-width: 1280px) {
-    .demo  {
-        li:nth-child(-n+4) {
-            display: none;
-        }
-        li.laptop-desktop {
-            display: block;;
-        }
-    }
-}
+@import 'demo.scss'
